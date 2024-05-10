@@ -1,0 +1,52 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Caches de IDEs
+.vscode/
+.idea/
+*.swp
+
+# Base de datos local
+*.sqlite3
+*.db
+
+# Carpeta de media
+media/
+
+# Archivos de entorno virtual
+venv/
+env/
+
+# Archivo de configuración local
+local_settings.py
+
+# Carpeta static recopilada
+staticfiles/
+
+# Archivos de log
+*.log
+
+# Carpeta .pytest_cache
+.pytest_cache/
+
+# Carpeta .coverage y archivos de cobertura
+.coverage
+.coverage.*
+htmlcov/
+
+# Carpeta de migraciones
+migrations/
+!migrations/__init__.py
+
+# Archivos y carpetas relacionados con certificados
+*.pem
+*.cert
+*.key
+
+# Carpeta de node_modules
+node_modules/
+
+# Archivos de configuración secretos
+*.env

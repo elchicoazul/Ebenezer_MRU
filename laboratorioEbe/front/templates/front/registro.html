@@ -1,0 +1,78 @@
+{% extends "front/menu.html" %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="content-body">
+    <div class="container-fluid">
+        <div class="row page-titles mx-0">
+            <div class="col-sm-6 p-md-0">
+                <div class="welcome-text">
+                    <h4>Registro de Usuario</h4>
+                    <span class="ml-1">------------------</span>
+                </div>
+            </div>
+        </div>
+        <form class="form-valide" action="" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-username">Nombre <span class="text-danger">*</span></label>
+                        <div class="col-lg-6">
+                            {% render_field form.username class="form-control" id="val-username" placeholder="Ingrese su nombre" %}
+                            <small class="form-text text-muted">
+                                Solo letras, números y @/./+/-/_ caracteres son permitidos.
+                            </small>
+                            {% if form.username.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.username.errors|first }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-email">Email <span class="text-danger">*</span></label>
+                        <div class="col-lg-6">
+                            {% render_field form.email class="form-control" id="val-email" placeholder="Ingrese su email" %}
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.email.errors|first }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-password1">Contraseña <span class="text-danger">*</span></label>
+                        <div class="col-lg-6">
+                            {% render_field form.password1 class="form-control" id="val-password1" placeholder="Ingrese su contraseña" %}
+                            {% if form.password1.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.password1.errors|first }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-4 col-form-label" for="val-password2">Confirmar Contraseña <span class="text-danger">*</span></label>
+                        <div class="col-lg-6">
+                            {% render_field form.password2 class="form-control" id="val-password2" placeholder="Confirme su contraseña" %}
+                            {% if form.password2.errors %}
+                                <div class="invalid-feedback">
+                                    {{ form.password2.errors|first }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-lg-5 ml-auto">
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

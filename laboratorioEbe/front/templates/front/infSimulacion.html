@@ -1,0 +1,88 @@
+{% extends "front/menu.html" %}
+ 
+ 
+{% block content %}
+ 
+        <!--**********************************
+            cuadro
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Informe de Simulación</h4>
+                            <span class="ml-1">------------------</span>
+                        </div>
+                    </div>
+ 
+                </div>
+                <!-- cuadro -->
+ 
+ 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">-----------</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                    <form class="form-valide" action="#" method="post">
+                                        <div class="row">
+                                            <div class="col-xl-6">
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val-username">
+                                                        <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="val-username" name="val-username" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val-email"> <span
+                                                            class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="val-email" name="val-email" placeholder="">
+                                                    </div>
+                                                </div>
+                                            
+                                            </div>
+                                            <div class="col-xl-6">
+                                                                                   
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val-number"> <span
+                                                            class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="text" class="form-control" id="val-number" name="val-number" placeholder="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-lg-4 col-form-label" for="val-number"><span
+                                                            class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-6">
+                                                        <input type="fecha" class="form-control" id="val-number" name="val-number" placeholder="">
+                                                    </div>
+                                                </div>
+                                                                                            
+                                               
+                                                <div class="form-group row">
+                                                    <div class="col-lg-5 ml-auto">
+                                                        <a href="{% url 'mPerfil' %}" class="btn btn-primary">Guardar Cambios</a>
+                                                    </div>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+ 
+        
+ 
+{% endblock %}

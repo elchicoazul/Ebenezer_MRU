@@ -1,0 +1,64 @@
+{% extends "front/menu.html" %}
+ 
+ 
+{% block content %}
+ 
+        <!--**********************************
+            cuadro
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>Mi Perfil</h4>
+                            <span class="ml-1">------------------</span>
+                        </div>
+                    </div>
+ 
+                </div>
+                <!-- cuadro -->
+ 
+ 
+                <div class="authincation h-100">
+                    <div class="container-fluid h-100">
+                        <div class="row justify-content-center h-100 align-items-center">
+                            <div class="col-md-6">
+                                <div class="authincation-content">
+                                    <div class="row no-gutters">
+                                        <div class="col-xl-12">
+                                            <div class="auth-form">
+                                                <h4 class="text-center mb-4"></h4>
+                                                <h2>Editar Perfil</h2>
+                                                <form method="post">
+                                                    {% csrf_token %}
+                                                    <div class="form-group">
+                                                        <label><strong>Nombre</strong></label>
+                                                        {{ form.username }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><strong>Email</strong></label>
+                                                        {{ form.email }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label><strong>Contraseña</strong></label>
+                                                        {{ form.password }}
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                                                    </div>
+                                                </form>
+
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+        
+ 
+{% endblock %}

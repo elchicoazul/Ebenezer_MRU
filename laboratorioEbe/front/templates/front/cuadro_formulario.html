@@ -1,0 +1,63 @@
+{% extends "front/menu.html" %}
+ 
+ 
+{% block content %}
+ 
+        <!--**********************************
+            cuadro
+        ***********************************-->
+        <div class="content-body">
+            <div class="container-fluid">
+                <div class="row page-titles mx-0">
+                    <div class="col-sm-6 p-md-0">
+                        <div class="welcome-text">
+                            <h4>SIMULACION</h4>
+                            <span class="ml-1">------------------</span>
+                        </div>
+                    </div>
+ 
+                </div>
+                <!-- cuadro -->
+ 
+ 
+                <div class="authincation col-sm-12">
+                    
+                                            
+                                                <h4 class="text-center mb-12"></h4>
+                                                <img src="{% url 'video_feed' %}" alt="Video Stream" style="width: 100%; height: auto; max-height: 100vh;">
+
+                                                <!-- Formulario para actualizar la velocidad -->
+                                                <form id="form-velocidad" action="{% url 'actualizar_velocidad' %}" method="post">
+                                                    {% csrf_token %}
+                                                    <input type="number" id="velocidad" name="velocidad" placeholder="Introduzca velocidad" required>
+                                                    <button type="submit">Actualizar velocidad</button>
+                                                </form>
+                                                
+                                                <script>
+                                                    document.getElementById('form-velocidad').addEventListener('submit', function(event) {
+                                                        event.preventDefault();
+                                                        const velocidad = document.getElementById('velocidad').value;
+                                                        fetch(this.action, {
+                                                            method: 'POST',
+                                                            body: JSON.stringify({ velocidad: velocidad }),
+                                                            headers: {
+                                                                'Content-Type': 'application/json',
+                                                                'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                                                                'X-Requested-With': 'XMLHttpRequest'
+                                                            }
+                                                        }).then(response => response.json())
+                                                          .then(data => {
+                                                            if (data.status === 'success') {
+                                                                console.log('Velocidad actualizada a:', data.new_speed);
+                                                                // Aquí puedes actualizar la interfaz si es necesario
+                                                            }
+                                                        }).catch(error => console.error('Error al actualizar la velocidad:', error));
+                                                    });
+                                                </script>
+                                               
+                          
+                </div>
+            
+        
+ 
+{% endblock %}
